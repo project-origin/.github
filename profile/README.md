@@ -4,34 +4,12 @@
 The mission of the project in as a concise format as possible. It should answer what the project's purpose is and enable contributors to make a good first guess whether a suggested feature will likely be in scope for the project, or not.
 -->
 
-Project-Origin is an open source experiment consisting of two parallel tracks: 
-1) A software development track evolving around creating solutions to enable publicly verifiable proofs for tracking of Energy 
-2) A collaboration platform development track, with the long-term goal of constructing a cross-sector collaboration platform for creating standardized digital infrastructure in the supply industry.
+Project-Origin is an open source collaboration that aims to create a public permissioned distributed ledger where everyone can validate the Guarantee of Origin for their electricity. The long-term goal is to expand the scope from electricity, to include other utilities. 
 
-The two tracks are tied together through ongoing collaboration efforts.
-
-Digitalization creates the opportunity for new data-based solutions and business models, contributing to optimize the use of physical infrastructure. Optimizing the use of ressources can help accelerate the green transition within the supply indsustry, and hence we find that developing digital infrastructure is critical and urgent. To get there, we believe that working in a structured collaboration space, using open source practices, enables faster, more coherent, and higher-quality solutions, than if the currently non-existing infrastructure is developed individually. The goal is to facilitate asynchronous collaboration, decision-making processes driven by \emph{doing}, and through transparent, accessible, and open software. 
+The project is created as open source, as we believe that joint collaboration in a structured, open source space enables faster, more secure, and higher-quality solutions. The goal is to facilitate asynchronous collaboration, decision-making processes driven by \emph{doing}, and through transparent, accessible, and open software. 
 
 ## Ongoing Collaboration efforts 
-Currently, there is an ongoing collaboration effort revolving around creating solutions that enable publicly verifiable proofs for the origin of produced energy. The first functionality to be developed in this context is to create the first version of a **Federated Publicly Verifiable Registry**. Go to the [Registry repository]() to learn more about the status and progress of this development project. 
-
-<!--
-I am thinking: Move this part to the Readme in the Registry project 
-## Registry
-
-The goal of [this project](https://github.com/orgs/project-origin/projects/1) is to create the first version of a **Federated Publicly Verifiable Registry**
-
-The registry will enable the following:
-
-- [ ] Federation setup enabling multiple registries to create a common truth.
-- [ ] Enable the issuance of Granular Certificates.
-- [ ] Enable the claim of Granular Certificates to some consumption.
-- [ ] The registry handles ownership based on public-private key-pairs.
-- [ ] Users can verify that they have a proffable amount of a Granular Certificate, that mathematically proves it is only used once.
-- [ ] Users can transfer ownership of a sub-part of a certificate to another private-key.
-- [ ] Privacy of the individual measurement is hidden behind a Petersen-commitments.
--->
-
+Currently, there is an ongoing implementation effort revolving around creating the first version of a **Federated Publicly Verifiable Registry**. Go to the [Registry repository](https://github.com/project-origin/registry) to learn more about the status and progress of this development project. 
 
 ## Getting Involved
 
