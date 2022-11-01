@@ -4,7 +4,7 @@ Project-Origin aims to create solutions to enable publicly verifiable proofs for
 
 ## Registry
 
-The goal of [this project](https://github.com/orgs/project-origin/projects/1) is to create the first version of a **Federated Publicly Verifiable Registry**
+The goal of [this project](https://github.com/project-origin/registry) is to create the first version of a **Federated Publicly Verifiable Registry**
 
 The registry will enable the following:
 
