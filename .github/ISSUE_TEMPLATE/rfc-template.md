@@ -19,7 +19,7 @@ assignees: ''
 
 ### Note: This template for creating RFCs has been adapted from the template used in the [Energy Track and Trace](https://github.com/Energy-Track-and-Trace) project.
 
-Learn more about [using RFCs in this project](missing link).
+Learn more about [using RFCs in this project](https://github.com/Energy-Track-and-Trace/ett-documentation/tree/main/rfcs).
 
 - Feature Name: (fill me in with a unique ident, `my_awesome_feature`)
 - Start Date: (fill me in with today's date, YYYY-MM-DD)
