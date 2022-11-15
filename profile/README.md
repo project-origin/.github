@@ -3,9 +3,9 @@
 The mission of the project in as a concise format as possible. It should answer what the project's purpose is and enable contributors to make a good first guess whether a suggested feature will likely be in scope for the project, or not.
 -->
 
-Project-Origin is an open source collaboration that aims to create a public permissioned distributed ledger where everyone can validate the origin of their electricity. By being able to do so, we can support and accelerate the green transition. The long-term goal is to expand the scope from electricity, to include other utilities, because we find that the functionality can create value in a broader scope. By creating an open source platform for collaboration, we can pool ressources and accelerate the development of critical digital infrastructure that is secure and the data verifiable. 
+Project-Origin is an open source collaboration that aims to create a public permissioned distributed ledger where everyone can validate the origin of their electricity. The long-term goal is to create the domain-specific framework in a way that allows easy adoption in other industries. By being able to do so, we can create value in a broader scope, and support and accelerate the green transition. By creating an open source platform for collaboration, we can pool ressources and accelerate the development of critical digital infrastructure. 
 
-The open source platform is set up with decision- and work structures, to achieve effective asynchronous collaboration through transparent, accessible software, and by using decision-making processes driven by _doing_.
+While developing the necessary digital infrastructure, we additionally work to set up this source platform with decision- and work structures, to achieve effective asynchronous collaboration through transparent, accessible software, and by using decision-making processes driven by _doing_.
 
 ## Ongoing Implementation Efforts 
 There is currently an implementation effort working on creating the first version of a federated, publicly verifiable registry. Go to the [Registry repository](https://github.com/project-origin/registry) to learn more about the implementation details and project status. 
