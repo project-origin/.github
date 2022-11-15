@@ -14,9 +14,19 @@ There is currently an implementation effort working on creating the first versio
 <!--
 - A "Getting involved" section that explains which public, archived, linkable communication channels the project uses. This should include a link to the project issue tracker, but also to any further discussion media used.
 -->
+If you want to get involved in the project with us, you can take a look at the [Registry project's Readme](https://github.com/project-origin/registry#readme), or at the [Partner Collaboration Readme](https://github.com/project-origin/origin-collaboration#readme) for an overview of what we are doing right now. 
 
-If you want to get involved in the project with us, the first important step is to make yourself familiar with our decision-making structures. To do that, we have made a guide on [How to Start Collaborating with Us](www.deadlink) for you. Further, you can take a look at our [Discussion Channels](https://github.com/orgs/project-origin/discussions), to obtain an overview of the project's current status and progress. 
- 
+For a deeper look into the progress and ongoing tasks in this project, you can take a look at our [Project Boards](https://github.com/orgs/project-origin/projects).
+
+If you want to start collaborating with us, we are currently updating the [Documentation]() to include guides on all the information you may need for onboarding.   
+
+You can check out our discussion forums to see ongoing and previous discussions, to ask questions, or to make suggestions: 
+
+ 1) Any discussions related to the currently ongoing implementation can be found at the [Registry Discussion Channels](https://github.com/project-origin/registry/discussions)
+ 2) Any discussions related to the collaboration between founding partners can be found at the [Collaboration Discussion Channels](https://github.com/project-origin/origin-collaboration/discussions)
+ 3) If you have any general suggestions or questions, you should go to the [Organization Discussion Channels](https://github.com/orgs/project-origin/discussions)
+
+
 <!--
 - Documentation needed for making modifications to a project - or a link to that.
 - Documentation on how to contribute to the overall collaboration project - or a link to that.
@@ -26,3 +36,5 @@ If you want to get involved in the project with us, the first important step is 
 <!--
 - A "Who we are" section explaining who the Trusted Committers behind the project are - with an explanation that instead of contacting these people privately the public communication channels above should be used for communication.
 -->
+The project has been founded as a partnership including [Energinet](https://energinet.dk/), [Mjølner Informatics](https://mjolner.dk/), [Concordium](https://concordium.com/) and [Alexandra Instituttet](https://alexandra.dk/).
+
