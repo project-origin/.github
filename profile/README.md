@@ -16,7 +16,7 @@ There is currently an implementation effort working on creating the first versio
 -->
 If you want to get involved in the project with us, you can take a look at the [Registry project's Readme](https://github.com/project-origin/registry#readme), or at the [Partner Collaboration Readme](https://github.com/project-origin/origin-collaboration#readme) for an overview of what we are doing right now. 
 
-For a deeper look into the progress and ongoing tasks in this project, you can take a look at our [Organization Project Boards](https://github.com/orgs/project-origin/projects), [Registry Project Boards](https://github.com/project-origin/registry/projects?query=is%3Aopen), or finally, if you are part of our Internal collaboration, you should chek out the [Internal Project Boards](https://github.com/project-origin/origin-collaboration/projects?query=is%3Aopen) 
+For a deeper look into the progress and ongoing tasks in this project, you can take a look at our [Organization Project Boards](https://github.com/orgs/project-origin/projects), [Registry Project Boards](https://github.com/project-origin/registry/projects?query=is%3Aopen), or finally, if you are part of our Internal collaboration, you should chek out the [Collaboration Project Boards](https://github.com/project-origin/origin-collaboration/projects?query=is%3Aopen) 
 
 If you want to start collaborating with us, we are currently updating the [Documentation]() to include guides on all the information you may need for onboarding.   
 
