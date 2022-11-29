@@ -16,7 +16,7 @@ There is currently an implementation effort working on creating the first versio
 -->
 If you want to get involved in the project with us, you can take a look at the [Registry project's Readme](https://github.com/project-origin/registry#readme). 
 
-For a deeper look into the progress and ongoing tasks in this project, go to the list of [Issues labelled with 'help wanted'](https://github.com/project-origin/registry/labels/help%20wanted) to see topics that seek input right now. Additionally, our [Organization Project Boards](https://github.com/orgs/project-origin/projects) provides an overview of general efforts within the project, while the the [Registry Project Boards](https://github.com/project-origin/registry/projects?query=is%3Aopen) provides an overview of efforts specifically for the registry implementation. 
+For a deeper look into the progress and ongoing tasks in this project, go to the list of [Issues labelled with `help wanted`](https://github.com/project-origin/registry/labels/help%20wanted) to see topics that seek input right now. Additionally, our [Organization Project Boards](https://github.com/orgs/project-origin/projects) provides an overview of general efforts within the project, while the the [Registry Project Boards](https://github.com/project-origin/registry/projects?query=is%3Aopen) provides an overview of efforts specifically for the registry implementation. 
 
 If you want to start collaborating with us, we are currently updating the [Documentation]() to include guides on all the information you may need to start contributing to the project. If there is some information you would have liked that isn't there, we will recommend you to [Create an Issue](), where you can make a suggestion. 
 
