@@ -39,6 +39,17 @@ body:
     attributes:
       label: "Screenshots"
       description: If applicable, add screenshots to help explain your problem.
-      placeholder: "#Add a few screenshots here, illustrating the problem"
+      placeholder: "Add a few screenshots here, illustrating the problem"
     validations:
       required: false
+  - type: textarea
+    id: desktop
+    attributes:
+      label: "Desktop"
+      description: Please complete the following information
+      value: |
+        - OS: [e.g. iOS]
+        - Browser [e.g. chrome, safari]
+        - Version [e.g. 22]
+    validations:
+      required: true
