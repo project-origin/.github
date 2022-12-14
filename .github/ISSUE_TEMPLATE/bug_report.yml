@@ -26,3 +26,11 @@ body:
       render: bash
     validations:
       required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: "Expected Behavior"
+      description: A clear and concise description of what you expect to happen.      
+      placeholder: "Describe the expected behavior in a few lines"
+    validations:
+      required: true
