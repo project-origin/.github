@@ -2,5 +2,5 @@ name: "🐞 Bug Report"
 description: "Create a report to help us improve"
 title: "🐞 [BUG] - <title>"
 labels: [
-  "question"
+  "bug"
 ]
