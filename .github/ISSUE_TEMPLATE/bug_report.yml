@@ -13,7 +13,7 @@ body:
       placeholder: "Describe the bug in a few lines"
     validations:
       required: true
- - type: markdown
+ - type: textarea
     id: reproduce_info
     attributes:
       label: "To Reproduce"
@@ -24,4 +24,4 @@ body:
       3. Scroll down to '....'
       4. See error"
     validations:
-      required: tru
+      required: true
