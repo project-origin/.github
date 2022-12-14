@@ -46,7 +46,7 @@ body:
     id: desktop
     attributes:
       label: "Desktop"
-      description: Please complete the following information
+      description: Please complete the following information. If this bug does not involve access through a browser (because it is e.g. a API issue, server bug, smartphone, etc.) please state the context information you have from there as much as it exists or state "not applicable" if there is none.
       value: |
         - OS: [e.g. iOS]
         - Browser [e.g. chrome, safari]
