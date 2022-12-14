@@ -47,7 +47,10 @@ body:
     attributes:
       label: "Desktop"
       description: Please complete the following information
-    placeholder: "- OS: [e.g. iOS]\n- Browser [e.g. chrome, safari]\n - Version [e.g. 22]"
+      value: |
+        - OS: [e.g. iOS]
+        - Browser [e.g. chrome, safari]
+        - Version [e.g. 22]"
     validations:
       required: true
 - type: textarea
