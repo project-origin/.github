@@ -13,3 +13,11 @@ body:
       placeholder: "Describe the bug in a few lines"
     validations:
       required: true
+  - type: textarea
+    id: reproduce_info
+    attributes:
+      label: "To Reproduce"
+      description: "How do you trigger this bug? Please walk us through it step by step."
+      value: ""
+    validations:
+      required: true
