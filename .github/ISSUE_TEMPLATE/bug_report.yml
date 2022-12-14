@@ -1,5 +1,5 @@
-name: "🐞  Bug Report"
-description: Create a report to help us improve
+name: "🐞 Bug Report"
+description: "Create a report to help us improve"
 title: "🐞 [BUG] - <title>"
 labels: [
   "bug"
@@ -17,15 +17,21 @@ body:
     id: reproduce_info
     attributes:
       label: "To Reproduce"
-      description: Steps to reproduce the behavior.
-      placeholder: "1. Go to '...'\n2. Click on '....'\n3. Scroll down to '....'\n4. See error"
+      description: How do you trigger this bug? Please walk us through it step by step.
+      value: |
+        1.
+        2.
+        3.
+        ...
+      render: bash
     validations:
       required: true
   - type: textarea
     id: expected_behavior
     attributes:
       label: "Expected Behavior"
-      description: A clear and concise description of what you expect to happen.      placeholder: "Describe the expected behavior in a few lines"
+      description: A clear and concise description of what you expect to happen.      
+      placeholder: "Describe the expected behavior in a few lines"
     validations:
       required: true
   - type: textarea
@@ -33,7 +39,7 @@ body:
     attributes:
       label: "Screenshots"
       description: If applicable, add screenshots to help explain your problem.
-      placeholder: "#Add a few screenshots here, illustrating the problem"
+      placeholder: "Add a few screenshots here, illustrating the problem"
     validations:
       required: false
   - type: textarea
@@ -41,10 +47,13 @@ body:
     attributes:
       label: "Desktop"
       description: Please complete the following information
-    placeholder: "- OS: [e.g. iOS]\n- Browser [e.g. chrome, safari]\n - Version [e.g. 22]"
+      value: |
+        - OS: [e.g. iOS]
+        - Browser [e.g. chrome, safari]
+        - Version [e.g. 22]
     validations:
       required: true
-- type: textarea
+  - type: textarea
     id: additional_context
     attributes:
       label: "Additional Context"
