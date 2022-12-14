@@ -4,3 +4,12 @@ title: "🐞 [BUG] - <title>"
 labels: [
   "bug"
 ]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "Describe the Bug"
+      description: A clear and concise description of what the bug is.  
+      placeholder: "Describe the bug in a few lines"
+    validations:
+      required: true
