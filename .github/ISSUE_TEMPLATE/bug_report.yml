@@ -18,6 +18,6 @@ body:
     attributes:
       label: "To Reproduce"
       description: "How do you trigger this bug? Please walk us through it step by step."
-      value: ""
+      value: "hi"
     validations:
       required: true
