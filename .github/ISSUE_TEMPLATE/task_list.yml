@@ -6,8 +6,8 @@ labels: [
 ]
 body:
   - type: markdown
-     attributes:
-       value: ## How to use the task list
+    attributes:
+       value: "## How to use the task list"
   - type: markdown
     attributes:
        value: |
