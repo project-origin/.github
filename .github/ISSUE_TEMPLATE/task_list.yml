@@ -1,5 +1,5 @@
 name: "☑️ Tracking of Tasks/Task List"
-description: Create a task list that tracks to-do's on the same topic. Helps split larger tasks into smaller to-do's. When the task list is created, you can convert your tasks to issues, by hovering over them with your mouse and clicking the issue symbol (circle) on the right. you can mark a task as complete, by clicking the checkbox that appears in front of the task. 
+description: Create a task list that tracks to-do's on the same topic. Helps split larger tasks into smaller to-do's. 
 title: "☑️ [Task List] - <title>"
 labels: [
   "tracking"
