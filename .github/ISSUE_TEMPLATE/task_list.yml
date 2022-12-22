@@ -7,7 +7,7 @@ labels: [
 body:
   - type: markdown
     attributes:
-       value: "#### How to use the task list"
+       value: "#### _How to use the task list_"
   - type: markdown
     attributes:
        value: |
