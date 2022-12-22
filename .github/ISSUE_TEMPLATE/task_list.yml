@@ -7,11 +7,11 @@ labels: [
 body:
   - type: markdown
     attributes:
-       value: "## How to use the task list"
+       value: "#### How to use the task list"
   - type: markdown
     attributes:
        value: |
-         When the task list is created, you can convert your tasks to issues, by hovering over them with your mouse and clicking the issue symbol (circle) on the right. You can also add already existing issues or pull requests to your task list by writing a "#" and following it with the title of the issue/PR. You can mark a task as complete, by clicking the checkbox that appears in front of the task.
+         _When the task list is created, you can convert your tasks to issues, by hovering over them with your mouse and clicking the issue symbol (circle) on the right. You can also add already existing issues or pull requests to your task list by writing a "#" and following it with the title of the issue/PR. You can mark a task as complete, by clicking the checkbox that appears in front of the task._
   - type: input
     id: start_date
     attributes:
