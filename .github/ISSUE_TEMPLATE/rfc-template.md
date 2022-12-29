@@ -8,13 +8,6 @@ assignees: ''
 
 ---
 
----
-name: RFC template
-about: Fill in this template and you are on your way to submit an RFC to the Project Origin working group.
-title: "[RFC]000 - Issue title"
-labels: RFC
-assignees: ''
----
 # 000-Template
 
 ### Note: This template for creating RFCs has been adapted from the template used in the [Energy Track and Trace](https://github.com/Energy-Track-and-Trace) project.
