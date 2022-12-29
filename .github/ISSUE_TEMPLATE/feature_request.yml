@@ -25,7 +25,7 @@ body:
     id: reference_issues
     attributes:
       label: "Reference Issues"
-      description: Common issues
+      description: Related issues
       placeholder: "#Issues IDs"
     validations:
       required: false
