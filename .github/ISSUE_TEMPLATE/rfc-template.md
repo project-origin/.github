@@ -1,8 +1,8 @@
 ---
-name: 💡 RFC Template
+name: 📬 RFC Template
 about: Fill in this template and you are on your way to submit an RFC to the Project-Origin
   working group.
-title: "💡 [RFC]000 - Issue title"
+title: "📬 [RFC]000 - Issue title"
 labels: rfc
 assignees: ''
 
