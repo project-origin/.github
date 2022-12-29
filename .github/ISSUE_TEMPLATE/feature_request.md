@@ -1,5 +1,5 @@
 ---
-name: "💡 Feature Request"
+name: "💡  Feature Request"
 about: Create a new ticket for a new feature request
 title: "💡 [REQUEST] - <title>"
 labels: [
