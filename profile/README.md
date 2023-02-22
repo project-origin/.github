@@ -27,3 +27,7 @@ You can check out our discussion forums to see ongoing and previous discussions,
 
 The project has been founded as a partnership including [Energinet](https://energinet.dk/), [Mjølner Informatics](https://mjolner.dk/), [Concordium](https://concordium.com/) and [Alexandra Instituttet](https://alexandra.dk/).
 
+In the [registry](https://github.com/project-origin/registry) repository, the Trusted Committer is currently [@wisbech](https://github.com/orgs/project-origin/people/wisbech), who will represent the partnership and advocate for the partnerships' best interests. 
+
+In the [origin-collaboration](https://github.com/project-origin/origin-collaboration) repositpory, the Trusted Committer is currently [@lauranolling](https://github.com/orgs/project-origin/people/lauranolling), who is also responsible for setting up structures, guidelines and decision-making processes for the Project-Origin Github organization. If you have any questions to anything, preferably post these in the [Q&A](https://github.com/orgs/project-origin/discussions/categories/q-a) in the discussion forum, and feel free to tag any of the Trusted Committers.
+
