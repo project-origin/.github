@@ -1,6 +1,6 @@
 name: "🐞 Bug Report"
 description: "Create a report to help us improve"
-title: "🐞 [BUG] - <title>"
+title: "<title>"
 labels: [
   "bug"
 ]
@@ -52,7 +52,7 @@ body:
         - Version [e.g. 22]
         - Browser [e.g. chrome, safari]        
     validations:
-      required: true
+      required: false
   - type: textarea
     id: additional_context
     attributes:

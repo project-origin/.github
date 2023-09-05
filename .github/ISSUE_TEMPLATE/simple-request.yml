@@ -1,0 +1,14 @@
+name: "✏️ Simple Request"
+description: Create a new issue with a simple form
+title: "<title>"
+labels: [
+  "help wanted"
+]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: Provide a brief explanation of the issue
+    validations:
+      required: true
