@@ -6,6 +6,6 @@ contact_links:
   - name: 🤝 Code of Conduct
     url: https://github.com/project-origin/.github/blob/main/CODE_OF_CONDUCT.md
     about: Please consult our Code of Conduct before participating in the Project-Origin community.
-  - name: 🛠️ Contribution Guidelines
-    url: https://github.com/project-origin/origin-collaboration/tree/main/docs/guidelines/contribution-guidelines
-    about: If this is your first contribution, make sure you are familiar with our Contribution Guidelines. 
+  # - name: 🛠️ Contribution Guidelines
+  #   url: https://github.com/project-origin/.github/blob/main/CONTRIBUTING.md
+  #   about: If this is your first contribution, make sure you are familiar with our Contribution Guidelines. 
