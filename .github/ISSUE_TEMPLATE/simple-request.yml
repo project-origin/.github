@@ -1,6 +1,5 @@
 name: "✏️ Simple Request"
 description: Create a new issue with a simple form
-title: "<title>"
 labels: [
   "help wanted"
 ]
