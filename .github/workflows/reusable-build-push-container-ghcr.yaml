@@ -1,0 +1,63 @@
+name: Build and push container image to GitHub Container Registry
+
+on:
+  workflow_call:
+    inputs:
+      imagename:
+        description: 'The name of the image, example: ghcr.io/project-origin/wallet-server'
+        required: true
+        type: string
+      version:
+        description: 'The version of the container'
+        required: true
+        type: string
+      context:
+        description: 'The path to for the context for docker'
+        required: true
+        type: string
+      dockerfile:
+        description: 'The path to the dockerfile'
+        required: true
+        type: string
+      push: 
+        description: 'If the image should be pushed to the registry'
+        required: false
+        type: boolean
+      platforms:
+        description: 'The platforms to build the image for, defaults to ”linux/amd64,linux/arm64”'
+        required: false
+        type: string
+        default: 'linux/amd64,linux/arm64'
+
+jobs:
+  publish-server-container:
+    name: Publish Wallet Server container
+    runs-on: ubuntu-22.04
+    env:
+      project: src/ProjectOrigin.WalletSystem.Server
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to the Container registry if token is set
+        uses: docker/login-action@v2
+        if: inputs.push
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          platforms: ${{ inputs.platforms }}
+          provenance: false
+          context: ${{ inputs.context }}
+          file: ${{ inputs.dockerfile }}
+          push: ${{ inputs.push }}
+          tags: ${{ inputs.imagename }}:${{ inputs.version }}
