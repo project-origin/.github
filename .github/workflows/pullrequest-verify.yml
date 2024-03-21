@@ -7,12 +7,4 @@ on:
 
 jobs:
   verify-renovate-config:
-    name: Verify Renovate config
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Verify Renovate config
-        run: npx --yes --package renovate -- renovate-config-validator --strict
-        env: 
-          RENOVATE_CONFIG_FILE: renovate-defaults.json
+    uses: ./.github/workflows/reusable-verify-renovate.yaml

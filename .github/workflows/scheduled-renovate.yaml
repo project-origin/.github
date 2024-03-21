@@ -1,4 +1,4 @@
-name: Renovate
+name: Runs Renovate on a schedule
 
 on:
   schedule:
