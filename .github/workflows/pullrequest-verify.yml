@@ -7,4 +7,4 @@ on:
 
 jobs:
   verify-renovate-config:
-    uses: ./.github/workflows/reusable-verify-renovate.yaml@main
+    uses: ./.github/workflows/reusable-verify-renovate.yaml
