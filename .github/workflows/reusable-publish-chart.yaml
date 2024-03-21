@@ -1,0 +1,68 @@
+name: Build and push container image to GitHub Container Registry
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: 'The version of the container'
+        required: true
+        type: string
+      chart_folder:
+        description: 'The path to the chart folder'
+        required: true
+        type: string
+      helm_registry_repository:
+        description: 'the repository of the helm registry'
+        required: true
+        type: string
+
+jobs:
+  publish-chart:
+    name: Publish helm chart
+    runs-on: ubuntu-22.04
+    env:
+      CHART_FOLDER: charts/project-origin-registry
+      HELM_REGISTRY_REPOSITORY: project-origin/helm-registry
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: this
+
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ inputs.helm_registry_repository }}
+          path: helm-registry
+          ssh-key: ${{ secrets.HELM_REGISTRY_TOKEN }}
+
+      - name: Get chart name
+        id: variables
+        run: |
+          echo "name=$(yq .name < this/${{ inputs.chart_folder }}/Chart.yaml)" >> $GITHUB_OUTPUT
+
+      - name: Package and generate index
+        run: |
+          helm repo add bitnami-charts https://charts.bitnami.com/bitnami
+          helm dependency build this/${{ inputs.chart_folder }}
+          helm package this/${{ inputs.chart_folder }} --version ${{ inputs.version }} --app-version "${{ inputs.version }}" --destination helm-releases
+          helm repo index helm-releases --merge helm-registry/index.yaml --url https://github.com/${{ github.repository }}/releases/download/v${{ inputs.version }}/
+          cp helm-releases/index.yaml helm-registry/index.yaml
+
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: helm-releases/${{ steps.variables.outputs.name }}-${{ inputs.version }}.tgz
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: helm-releases/${{ steps.variables.outputs.name }}-${{ inputs.version }}.tgz
+
+      - name: Commit index changes
+        run: |
+          cd helm-registry
+          git config --local user.name github-actions
+          git config --local user.email github-actions@github.com
+          git add index.yaml
+          git commit -m "Update index.yaml for ${{ steps.variables.outputs.name }}-${{ inputs.version }}"
+          git push
