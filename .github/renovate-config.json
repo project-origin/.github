@@ -1,0 +1,9 @@
+{
+    "repositories": [
+        "project-origin/.github",
+        "project-origin/registry",
+        "project-origin/wallet",
+        "project-origin/stamp",
+        "project-origin/verifier_electricity"
+    ]
+}
