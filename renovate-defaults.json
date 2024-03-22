@@ -1,4 +1,7 @@
 {
+    "extends": [
+        "helpers:pinGitHubActionDigests"
+    ],
     "labels": [
         "dependencies"
     ],
@@ -17,8 +20,7 @@
                 "action"
             ],
             "labels": ["ci"],
-            "automerge": true,
-            "pinDigests": true
+            "automerge": true
         },
         {
             "groupName": "nuget",
