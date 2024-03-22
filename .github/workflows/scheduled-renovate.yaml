@@ -5,6 +5,12 @@ on:
     # Run at 8am-2pm UTC on weekdays
     - cron: 0 8-14 * * 1-5
   push:
+    branches:
+      - main
+    paths:
+      - 'renovate-defaults.json'
+      - '.github/renovate-config.json'
+      - '.github/workflows/scheduled-renovate.yaml'
 
 jobs:
   renovate:

@@ -13,6 +13,14 @@
             ]
         },
         {
+            "matchDepTypes": [
+                "action"
+            ],
+            "labels": ["ci"],
+            "automerge": true,
+            "pinDigests": true
+        },
+        {
             "groupName": "nuget",
             "automerge": true,
             "description": "Dotnet nuget packages",
