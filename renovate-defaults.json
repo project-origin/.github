@@ -1,4 +1,7 @@
 {
+    "extends": [
+        "helpers:pinGitHubActionDigests"
+    ],
     "labels": [
         "dependencies"
     ],
