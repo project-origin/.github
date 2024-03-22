@@ -4,6 +4,7 @@ on:
   schedule:
     # Run at 8am-2pm UTC on weekdays
     - cron: 0 8-14 * * 1-5
+  push:
 
 jobs:
   renovate:
