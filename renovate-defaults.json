@@ -30,5 +30,17 @@
                 "**/Dockerfile"
             ]
         }
+    ],
+    "customManagers": [
+        {
+            "customType": "regex",
+            "datasourceTemplate": "docker",
+            "fileMatch": [
+                "devcontainer.json$"
+            ],
+            "matchStrings": [
+                "\"image\": \"(?<depName>.+):(?<currentValue>.+)\""
+            ]
+        }
     ]
 }
