@@ -49,7 +49,7 @@
                 "devcontainer.json$"
             ],
             "matchStrings": [
-                "\"image\": \"(?<depName>.+):(?<currentValue>.+)\""
+                "\"image\":\\W*\"(?<depName>\\S+):(?<currentValue>\\S+)\""
             ]
         }
     ]
