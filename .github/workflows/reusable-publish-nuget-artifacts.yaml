@@ -11,7 +11,7 @@ jobs:
       nuget_path: nuget-packages
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: ${{ env.nuget_path }}
 
