@@ -2,6 +2,9 @@ name: Publish nupkg artifacts to NuGet
 
 on:
   workflow_call:
+    secrets:
+      nuget_api_key:
+        required: true
 
 jobs:
   publish-nuget-package:
@@ -17,4 +20,4 @@ jobs:
 
       - name: Publish
         shell: bash
-        run: dotnet nuget push ${{ env.nuget_path }}/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push ${{ env.nuget_path }}/*.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json
