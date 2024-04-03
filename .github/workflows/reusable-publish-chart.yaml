@@ -15,7 +15,10 @@ on:
         description: 'the repository of the helm registry'
         required: true
         type: string
-
+    secrets:
+      helm_registry_token:
+        required: true
+      
 jobs:
   publish-chart:
     name: Publish helm chart
@@ -33,7 +36,7 @@ jobs:
         with:
           repository: ${{ inputs.helm_registry_repository }}
           path: helm-registry
-          ssh-key: ${{ secrets.HELM_REGISTRY_TOKEN }}
+          ssh-key: ${{ secrets.helm_registry_token }}
 
       - name: Get chart name
         id: variables
