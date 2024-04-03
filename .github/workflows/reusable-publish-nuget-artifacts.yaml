@@ -1,0 +1,29 @@
+name: Publish nupkg artifacts to NuGet
+
+on:
+  workflow_call:
+    inputs:
+      nuget_artifact:
+        description: 'Name of the artifact containing the nupkg files'
+        required: true
+        type: string
+    secrets:
+      nuget_api_key:
+        required: true
+
+jobs:
+  publish-nuget-package:
+    name: Publish nupkg artifacts to NuGet
+    runs-on: ubuntu-22.04
+    env:
+      nuget_path: nuget-packages
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427 # v4
+        with:
+          name: ${{ inputs.nuget_artifact }}
+          path: ${{ env.nuget_path }}
+
+      - name: Publish
+        shell: bash
+        run: dotnet nuget push ${{ env.nuget_path }}/*.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json

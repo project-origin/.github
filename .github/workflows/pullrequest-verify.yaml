@@ -1,0 +1,10 @@
+name: Verifies PR are ready for merge
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  verify-renovate-config:
+    uses: ./.github/workflows/reusable-verify-renovate.yaml

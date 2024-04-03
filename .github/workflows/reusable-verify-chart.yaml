@@ -1,0 +1,14 @@
+name: Verify Chart works on PR
+
+on:
+  workflow_call:
+
+jobs:
+  verify-chart:
+    name: Verify chart with local built container
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+
+      - name: Start kind cluster
+        run: make verify-chart

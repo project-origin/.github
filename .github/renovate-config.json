@@ -1,0 +1,12 @@
+{
+    "repositories": [
+        "project-origin/.github",
+        "project-origin/docs",
+        "project-origin/registry",
+        "project-origin/wallet",
+        "project-origin/stamp",
+        "project-origin/verifier_electricity",
+        "project-origin/hierarchical-deterministic-keys",
+        "project-origin/pedersen-commitment"
+    ]
+}

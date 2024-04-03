@@ -1,0 +1,17 @@
+name: Verify devcontainer works on PR
+
+on:
+  workflow_call:
+
+jobs:
+  test-devcontainer:
+    name: Verify devcontainer works
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+
+      - name: Build and run tests on devcontainer
+        uses: devcontainers/ci@7957e0cf6d027a8ab027745f399fcdbd3aa74f0f # v0.3
+        with:
+          push: never
+          runCmd: make test

@@ -1,0 +1,32 @@
+name: Verify code on PR
+
+on:
+  workflow_call:
+
+jobs:
+  verify-code:
+    name: Verifies code formatting, builds, and runs unit tests
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+
+      - name: Setup .NET Core SDK from global.json
+        uses: actions/setup-dotnet@4d6c8fcf3c8f7a60068d26b594648e99df24cee3 # v4
+
+      - name: Print info
+        run: make info
+
+      - name: Build code
+        run: make build
+
+      - name: Run tests
+        run: make test
+
+      - name: Verify formatting
+        run: make lint
+
+      - name: Verify no changes
+        run: |
+          git diff --exit-code
+          git diff --cached --exit-code
+

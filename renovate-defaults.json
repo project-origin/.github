@@ -1,0 +1,56 @@
+{
+    "extends": [
+        "helpers:pinGitHubActionDigests"
+    ],
+    "labels": [
+        "dependencies"
+    ],
+    "platformAutomerge": true,
+    "packageRules": [
+        {
+            "description": "Automerge non-major updates",
+            "automerge": true,
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ]
+        },
+        {
+            "matchDepTypes": [
+                "action"
+            ],
+            "labels": ["ci"],
+            "automerge": true
+        },
+        {
+            "groupName": "nuget",
+            "automerge": true,
+            "description": "Dotnet nuget packages",
+            "matchDatasources": [
+                "nuget"
+            ],
+            "matchPackagePatterns": [
+                ".*"
+            ]
+        },
+        {
+            "groupName": "Dockerfile updates",
+            "automerge": true,
+            "matchFileNames": [
+                "**/Dockerfile"
+            ]
+        }
+    ],
+    "customManagers": [
+        {
+            "customType": "regex",
+            "datasourceTemplate": "docker",
+            "fileMatch": [
+                "devcontainer.json$"
+            ],
+            "matchStrings": [
+                "\"image\":\\W*\"(?<depName>\\S+):(?<currentValue>\\S+)\""
+            ]
+        }
+    ]
+}
