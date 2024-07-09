@@ -26,7 +26,7 @@ jobs:
           private_key: ${{ secrets.RENOVATE_GH_APP_PRIVATE_KEY }}
 
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@d4cde0ac34e53942ead1619a101748e3ab842937 # v40.2.1
+        uses: renovatebot/github-action@042670e39b8d7335e992c3fa526ecbfbd52ef57b # v40.2.2
         with:
           configurationFile: .github/renovate-config.json
           token: ${{ steps.get_installation_token.outputs.token }}
