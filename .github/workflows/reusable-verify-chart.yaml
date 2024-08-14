@@ -13,5 +13,8 @@ jobs:
       - name: Setup .NET Core SDK from global.json
         uses: actions/setup-dotnet@4d6c8fcf3c8f7a60068d26b594648e99df24cee3 # v4
 
+      - name: Install helm unittest
+        run: helm plugin install https://github.com/helm-unittest/helm-unittest.git
+
       - name: Start kind cluster
         run: make verify-chart
