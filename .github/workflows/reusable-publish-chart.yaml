@@ -54,9 +54,9 @@ jobs:
 
       - name: Set appVersion if empty
         run: |
-            if [ -z "$(yq eval '.appVersion' this/${{ inputs.chart_folder }}/Chart.yaml)" ]; then
-            yq eval '.appVersion = .version' -i this/${{ inputs.chart_folder }}/Chart.yaml
-            fi
+          if [ -z "$(yq eval '.appVersion' this/${{ inputs.chart_folder }}/Chart.yaml)" ]; then
+          yq eval '.appVersion = .version' -i this/${{ inputs.chart_folder }}/Chart.yaml
+          fi
 
       - name: Package and generate index
         run: |
