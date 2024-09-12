@@ -52,11 +52,17 @@ jobs:
         run: |
           yq eval '.annotations += {"artifacthub.io/prerelease": "true"}' this/${{ inputs.chart_folder }}/Chart.yaml
 
+      - name: Set appVersion if empty
+        run: |
+            if [ -z "$(yq eval '.appVersion' this/${{ inputs.chart_folder }}/Chart.yaml)" ]; then
+            yq eval '.appVersion = .version' -i this/${{ inputs.chart_folder }}/Chart.yaml
+            fi
+
       - name: Package and generate index
         run: |
           helm repo add bitnami-charts https://charts.bitnami.com/bitnami
           helm dependency build this/${{ inputs.chart_folder }}
-          helm package this/${{ inputs.chart_folder }} --version ${{ inputs.version }} --app-version "${{ inputs.version }}" --destination helm-releases
+          helm package this/${{ inputs.chart_folder }} --version ${{ inputs.version }} --destination helm-releases
           helm repo index helm-releases --merge helm-registry/index.yaml --url https://github.com/${{ github.repository }}/releases/download/v${{ inputs.version }}/
           cp helm-releases/index.yaml helm-registry/index.yaml
 
