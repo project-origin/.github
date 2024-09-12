@@ -6,7 +6,7 @@ on:
       version:
         description: 'The version of the package'
         value: ${{ jobs.define-version.outputs.version }}
-
+   
 jobs:
   define-version:
     runs-on: ubuntu-22.04
@@ -14,6 +14,6 @@ jobs:
       version: ${{ steps.output-version.outputs.version }}
 
     steps:
-      - name: Set env
+      - name: Set version
         id: output-version
         run: echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
