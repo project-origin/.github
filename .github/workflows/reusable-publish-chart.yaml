@@ -50,7 +50,7 @@ jobs:
       - name: Set annotation if pre-release
         if: ${{ inputs.prerelease }}
         run: |
-          yq eval '.annotations += {"artifacthub.io/prerelease": "true"}' this/${{ inputs.chart_folder }}/Chart.yaml
+          yq eval '.annotations += {"artifacthub.io/prerelease": "true"}' -i this/${{ inputs.chart_folder }}/Chart.yaml
 
       - name: Set appVersion if empty
         run: |
