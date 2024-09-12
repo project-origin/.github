@@ -6,22 +6,14 @@ on:
       version:
         description: 'The version of the package'
         value: ${{ jobs.define-version.outputs.version }}
-      prerelease:
-        description: 'The pre-release flag'
-        value: ${{ jobs.define-version.outputs.prerelease }}
-
+   
 jobs:
   define-version:
     runs-on: ubuntu-22.04
     outputs:
       version: ${{ steps.output-version.outputs.version }}
-      prerelease: ${{ steps.check-prerelease.outputs.prerelease }}
 
     steps:
       - name: Set version
         id: output-version
         run: echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
-
-      - name: set prerelease
-        id: check-prerelease
-        run: echo "prerelease=${{ github.event.release.prerelease }}" >> $GITHUB_OUTPUT
