@@ -54,7 +54,7 @@ jobs:
 
       - name: Set appVersion if empty
         run: |
-          if [ -z "$(yq eval '.appVersion' this/${{ inputs.chart_folder }}/Chart.yaml)" ]; then
+          if [ "$(yq eval '.appVersion' this/${{ inputs.chart_folder }}/Chart.yaml)" = "null" ]; then
           yq eval '.appVersion = .version' -i this/${{ inputs.chart_folder }}/Chart.yaml
           fi
 
