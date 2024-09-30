@@ -5,6 +5,7 @@
         "project-origin/registry",
         "project-origin/wallet",
         "project-origin/stamp",
+        "project-origin/chronicler",
         "project-origin/verifier_electricity",
         "project-origin/hierarchical-deterministic-keys",
         "project-origin/pedersen-commitment"
