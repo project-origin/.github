@@ -32,7 +32,7 @@ on:
 jobs:
   publish-server-container:
     name: Publish Wallet Server container
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     env:
       project: src/ProjectOrigin.WalletSystem.Server
     steps:
