@@ -1,3 +1,10 @@
 {
-    "extends": ["github>project-origin/.github:renovate-defaults.json"]
+    "extends": ["github>project-origin/.github:renovate-defaults.json"],
+    "packageRules": [
+        {
+            "matchManagers": ["nuget"],
+            "matchPackageNames": ["FluentAssertions"],
+            "allowedVersions": "7.x"
+        }
+    ]
 }
