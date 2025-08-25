@@ -1,0 +1,41 @@
+name: Generate Helm diagram
+
+on:
+  workflow_call:
+    inputs:
+      chart_folder:
+        required: true
+        type: string
+
+jobs:
+  diagram:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+
+      - name: Build chart dependencies
+        shell: bash
+        run: |
+          helm repo add bitnami-charts https://charts.bitnami.com/bitnami
+          helm dependency build "${{ inputs.chart_folder }}"
+
+      - name: Generate SVG with pinned image (no shell injection)
+        shell: bash
+        run: |
+          IMG="philippemerle/kubediagrams@sha256:04782c0137e3ea6369e9fb9599be0452693b2087e73733e5e9bb8d8640b441b5"
+          mkdir -p artifacts
+          docker pull "$IMG"
+          docker run --rm -v "$PWD":/work -w /work "$IMG" \
+            helm-diagrams "${{ inputs.chart_folder }}" \
+            -o "artifacts/architecture.svg" \
+            -f "svg" \
+            --embed-all-icons
+
+      - name: Upload SVG
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: architecture-diagram
+          path: artifacts/architecture.svg
+          if-no-files-found: error
