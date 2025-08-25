@@ -32,35 +32,57 @@ jobs:
           helm repo add bitnami-charts https://charts.bitnami.com/bitnami
           helm dependency build "${{ inputs.chart_folder }}"
 
-      - name: Generate diagram
+      - name: Generate diagram using helm template + kube-diagrams
         shell: bash
         run: |
+          # Create a temporary values file
+          cat > test-values.yaml << 'EOF'
+          image:
+            tag: test
+          service:
+            type: NodePort
+            nodePort: ${{ inputs.nodeport }}
+          verifiers:
+            - type: project_origin.electricity.v1
+              url: http://electricity.default.svc.cluster.local:5000
+          blockFinalizer:
+            interval: 00:00:15
+          transactionProcessor:
+            replicas: 2
+          returnComittedForFinalized: false
+          postgresql:
+            host: postgresql
+            database: postgres
+            username: postgres
+            password:
+              secretRef:
+                name: postgresql
+                key: postgres-password
+          rabbitmq:
+            host: rabbitmq
+            username: user
+            password:
+              secretRef:
+                name: rabbitmq
+                key: rabbitmq-password
+          redis:
+            enabled: true
+            sentinel:
+              enabled: true
+            replica:
+              replicaCount: 3
+          EOF
+      
+          # Use helm template to generate manifests
+          helm template test-release "${{ inputs.chart_folder }}" -f test-values.yaml > manifests.yaml
+      
+          # Use kube-diagrams on the generated manifests
           IMG=philippemerle/kubediagrams@sha256:04782c0137e3ea6369e9fb9599be0452693b2087e73733e5e9bb8d8640b441b5
-          OUT=artifacts/architecture.svg
-          mkdir -p artifacts
-          docker pull "$IMG"
+          OUT="${{ inputs.output }}"
+          mkdir -p "$(dirname "$OUT")"
+          
           docker run --rm -v "$PWD":/work -w /work "$IMG" \
-            helm-diagrams "${{ inputs.chart_folder }}" \
-            --namespace ns-a \
-            -o "$OUT" -f svg --embed-all-icons \
-            --set-string image.tag=test \
-            --set-string service.type=NodePort \
-            --set service.nodePort=32080 \
-            --set-string verifiers[0].type=project_origin.electricity.v1 \
-            --set-string verifiers[0].url=http://electricity.default.svc.cluster.local:5000 \
-            --set-string blockFinalizer.interval=00:00:15 \
-            --set transactionProcessor.replicas=2 \
-            --set returnComittedForFinalized=false \
-            --set-string postgresql.host=postgresql \
-            --set-string postgresql.database=postgres \
-            --set-string postgresql.username=postgres \
-            --set-string postgresql.password.secretRef.name=postgresql \
-            --set-string postgresql.password.secretRef.key=postgres-password \
-            --set-string rabbitmq.host=rabbitmq \
-            --set-string rabbitmq.username=user \
-            --set-string rabbitmq.password.secretRef.name=rabbitmq \
-            --set-string rabbitmq.password.secretRef.key=rabbitmq-password \
-            --set redis.enabled=true --set redis.sentinel.enabled=true --set redis.replica.replicaCount=3
+            kube-diagrams manifests.yaml -o "$OUT" -f "${{ inputs.format }}" --embed-all-icons
 
       - name: Upload diagram
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
