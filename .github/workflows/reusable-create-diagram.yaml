@@ -9,7 +9,7 @@ on:
       output: 
         type: string
         required: false
-        default: "artifacts/architecture.png"
+        default: "artifacts/architecture.svg"
       format: 
         type: string
         required: false
