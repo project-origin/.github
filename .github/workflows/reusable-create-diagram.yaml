@@ -21,21 +21,20 @@ jobs:
           helm repo add bitnami-charts https://charts.bitnami.com/bitnami
           helm dependency build "${{ inputs.chart_folder }}"
 
-      - name: Generate SVG with pinned image (no shell injection)
-        shell: bash
+      - name: Generate Helm diagram
         run: |
-          IMG="philippemerle/kubediagrams@sha256:04782c0137e3ea6369e9fb9599be0452693b2087e73733e5e9bb8d8640b441b5"
-          mkdir -p artifacts
+          helm repo add bitnami-charts https://charts.bitnami.com/bitnami
+          helm dependency build "${{ inputs.chart_folder }}"
+          IMG=philippemerle/kubediagrams@sha256:04782c0137e3ea6369e9fb9599be0452693b2087e73733e5e9bb8d8640b441b5
+          OUT=artifacts/architecture.png
+          mkdir -p "$(dirname "$OUT")"
           docker pull "$IMG"
           docker run --rm -v "$PWD":/work -w /work "$IMG" \
-            helm-diagrams "${{ inputs.chart_folder }}" \
-            -o "artifacts/architecture.svg" \
-            -f "svg" \
-            --embed-all-icons
+            helm-diagrams "${{ inputs.chart_folder }}" -o "$OUT" -f png --embed-all-icons
 
-      - name: Upload SVG
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+      - name: Upload diagram
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: architecture-diagram
-          path: artifacts/architecture.svg
+          path: artifacts/architecture.png
           if-no-files-found: error
