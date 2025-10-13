@@ -67,7 +67,7 @@ jobs:
           cp helm-releases/index.yaml helm-registry/index.yaml
 
       - name: Upload release assets
-        uses: softprops/action-gh-release@aec2ec56f94eb8180ceec724245f64ef008b89f5 # v2
+        uses: softprops/action-gh-release@6da8fa9354ddfdc4aeace5fc48d7f679b5214090 # v2
         with:
           files: helm-releases/${{ steps.variables.outputs.name }}-${{ inputs.version }}.tgz
 
